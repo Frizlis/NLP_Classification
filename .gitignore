@@ -1,0 +1,7 @@
+/.venv
+notebooks/models/
+notebooks/catboost_info/
+notebooks/weights/
+
+data/archive.zip
+core\__pycache__
