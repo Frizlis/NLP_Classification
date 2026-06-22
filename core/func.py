@@ -251,14 +251,13 @@ def training(
         if mean_f1 > best_f1:
             best_f1 = mean_f1
             torch.save(model.state_dict(), save_path + '_best.pt')
+            epoch_without_improvement = 0
             print(f'  → Сохранена лучшая модель (mean F1={mean_f1:.4f})')
         else:
             epoch_without_improvement += 1
         
         if epoch_without_improvement > early_stop:
-            return f1_scores
-        else:
-            epoch_without_improvement = 0
+            return f1_scores            
 
     return f1_scores
 
