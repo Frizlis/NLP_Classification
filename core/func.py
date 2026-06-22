@@ -257,6 +257,8 @@ def training(
         
         if epoch_without_improvement > early_stop:
             return f1_scores
+        else:
+            epoch_without_improvement = 0
 
     return f1_scores
 
